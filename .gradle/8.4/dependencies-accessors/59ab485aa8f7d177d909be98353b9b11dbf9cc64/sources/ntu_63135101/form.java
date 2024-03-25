@@ -20,6 +20,12 @@ public class form extends JFrame implements ActionListener{
 		panel.setLayout(new GridBagLayout());
 		GridBagConstraints constraints = new GridBagConstraints();
 		constraints.insets = new Insets(30,30,30,30);
+		
+		JLabel meterLabel = new JLabel("Mét: ");
+		meterTextField = new JTextField(10);
+		
+		JLabel feetLabel = new JLabel("Feet: ");
+		feetTextField = new JTextField(10);
 	}
 
 }
