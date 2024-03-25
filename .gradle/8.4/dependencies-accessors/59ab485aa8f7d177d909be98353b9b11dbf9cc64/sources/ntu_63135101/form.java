@@ -26,6 +26,11 @@ public class form extends JFrame implements ActionListener{
 		
 		JLabel feetLabel = new JLabel("Feet: ");
 		feetTextField = new JTextField(10);
+		
+		JButton toFeetButton = new JButton("Mét sang Feet");
+		toFeetButton.addActionListener(this);
+		JButton toMeterButton = new JButton("Feet sang Mét");
+		toMeterButton.addActionListener(this);
 	}
 
 }
