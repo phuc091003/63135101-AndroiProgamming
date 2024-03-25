@@ -9,28 +9,45 @@
     tools:ignore="ExtraText">
 
     <TextView
+        android:id="@+id/heightLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Chiều cao (cm)"
-        android:id="@+id/heightLabel"
-        android:layout_marginTop="16dp"
         android:textSize="18sp"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
+        android:id="@+id/heightInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/heightInput"
         android:layout_below="@+id/heightLabel"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="33dp"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightLabel" />
+
     <TextView
+        android:id="@+id/weightInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cân Nặng(kg)"
-        android:id="@+id/weightInput"
         android:layout_below="@+id/heightLabel"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:text="Cân Nặng(kg)"
         android:textSize="18sp"
-        />
-    
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightInput" />
+
+    <EditText
+        android:id="@+id/weightInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weightLabel"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateIds,UnknownId"
+        tools:layout_editor_absoluteY="207dp" />
+    <
 </androidx.constraintlayout.widget.ConstraintLayout>
