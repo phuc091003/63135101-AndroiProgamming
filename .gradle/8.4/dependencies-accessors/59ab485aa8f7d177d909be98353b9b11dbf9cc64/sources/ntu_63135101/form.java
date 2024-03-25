@@ -57,4 +57,13 @@ public class form extends JFrame implements ActionListener{
 		pack();
 		setLocationRelativeTo(null);
 	}
+	public void convertToFeet() {
+		try {
+			double meter = Double.parseDouble(meterTextField.getText());
+			double feet = meter *3.28084;
+			feetTextField.setText(String.format("%.2f",feet));
+		} catch(NumberFormatException ex) {
+			JOptionPane.showMessageDialog(this, "Giá trị không hợp lệ!");;
+		}
+	}
 }
