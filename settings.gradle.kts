@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Cau2_AppBMI"
 include(":app")
+include(":app")
  

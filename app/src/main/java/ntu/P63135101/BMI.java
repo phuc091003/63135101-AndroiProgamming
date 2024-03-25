@@ -5,27 +5,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import nt21.test.R;
 
-public class MainActivity extends AppCompatActivity {
-    private EditText heighInput;
-    private EditText weighInput;
+public class BMI extends AppCompatActivity {
+    private EditText heightInput;
+    private EditText weightInput;
     private Button calculateButton;
     private TextView resultText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        heighInput = findViewById(R.id.heightInput);
-        weighInput = findViewById(R.id.weightInput);
+        heightInput = findViewById(R.id.heightInput);
+        weightInput = findViewById(R.id.weightInput);
         calculateButton = findViewById(R.id.calculateButton);
         resultText = findViewById(R.id.resultText);
 
@@ -37,16 +31,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void calculateBMI(){
-        String heighStr = heighInput.getText().toString();
-        String weighStr = weighInput.getText().toString();
+        String heightStr = heightInput.getText().toString();
+        String weightStr = weightInput.getText().toString();
 
-        if(heighStr.isEmpty() || weighStr.isEmpty()){
+        if(heightStr.isEmpty() || weightStr.isEmpty()){
             resultText.setText("Hãy nhập chiều cao và cân nặng.");
             return;
         }
-        float height = Float.parseFloat(heighStr)/100; // doi ve don vi met
-        float weight = Float.parseFloat(weighStr);
+        float height = Float.parseFloat(heightStr)/100; // doi ve don vi met
+        float weight = Float.parseFloat(weightStr);
         float bmi = weight/(height*height);
         String result;
+        if(bmi < 18.5){
+            result = "Bạn bị thiếu cân. BMI của bạn là "+bmi;
+        } else if (bmi >= 18.5 && bmi < 25) {
+            result = "Bạn bình thường. BMI của bạn là "+bmi;
+        }else if (bmi >= 25 && bmi < 30) {
+            result = "Bạn bị thừa cân. BMI của bạn là " + bmi;
+        }else {
+            result = "Bạn béo phì. BMI của bạn là "+bmi;
+        }
+        resultText.setText(result);
     }
 }
