@@ -49,5 +49,15 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="DuplicateIds,UnknownId"
         tools:layout_editor_absoluteY="207dp" />
-    <
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weightInput"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="132dp"
+        android:text="Tính BMI"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
