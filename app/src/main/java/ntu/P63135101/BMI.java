@@ -1,6 +1,7 @@
 package ntu.P63135101;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,10 +28,25 @@ public class MainActivity extends AppCompatActivity {
         weighInput = findViewById(R.id.weightInput);
         calculateButton = findViewById(R.id.calculateButton);
         resultText = findViewById(R.id.resultText);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculateBMI();
+            }
         });
+    }
+    public void calculateBMI(){
+        String heighStr = heighInput.getText().toString();
+        String weighStr = weighInput.getText().toString();
+
+        if(heighStr.isEmpty() || weighStr.isEmpty()){
+            resultText.setText("Hãy nhập chiều cao và cân nặng.");
+            return;
+        }
+        float height = Float.parseFloat(heighStr)/100; // doi ve don vi met
+        float weight = Float.parseFloat(weighStr);
+        float bmi = weight/(height*height);
+        String result;
     }
 }
