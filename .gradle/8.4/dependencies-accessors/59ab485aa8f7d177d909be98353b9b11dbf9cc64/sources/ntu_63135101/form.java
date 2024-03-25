@@ -75,5 +75,12 @@ public class form extends JFrame implements ActionListener{
 			JOptionPane.showMessageDialog(this, "Giá trị không hợp lệ!");;
 		}
 	}
+	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand().equals("Mét sang Feet")) {
+			convertToFeet();
+		}else if(e.getActionCommand().equals("Feet sang Mét")) {
+			convertToMeter();
+		}
+	}
 	
 }
