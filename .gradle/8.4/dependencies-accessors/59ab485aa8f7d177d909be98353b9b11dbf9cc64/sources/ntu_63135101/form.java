@@ -5,11 +5,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class form extends JFrame {
-
-	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
-
+public class form extends JFrame implements ActionListener{
+	private JTextField meterTextField;
+	private JTextField feetTextField;
+	
 	/**
 	 * Launch the application.
 	 */
