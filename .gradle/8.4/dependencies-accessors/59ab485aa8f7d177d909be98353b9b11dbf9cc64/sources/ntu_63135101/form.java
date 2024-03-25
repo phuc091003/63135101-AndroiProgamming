@@ -82,5 +82,8 @@ public class form extends JFrame implements ActionListener{
 			convertToMeter();
 		}
 	}
+	public void showform() {
+		setVisible(true);
+	}
 	
 }
